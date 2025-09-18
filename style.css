@@ -1,0 +1,202 @@
+/* Reset básico para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #c01d1d; /* Fondo negro base */
+    color: #fff;
+    min-height: 100vh;
+    font-family: 'MedievalSharp', cursive, serif;
+}
+
+
+/* Encabezado sin imagen de fondo */
+header {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo sólido para legibilidad */
+    border-bottom: 2px solid #444;
+}
+
+/* Título principal */
+h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-family: 'MedievalSharp', cursive, serif;
+}
+
+/* Fondo solo para main con imagen y capa oscura encima */
+main {
+    position: relative;
+    z-index: 0;
+    background-image: url('img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1rem;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Capa semitransparente encima de la imagen para mejorar contraste */
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Ajusta para aclarar/oscurecer */
+    z-index: -1; /* Debajo del contenido */
+}
+
+/* Contenedor del buscador: input + botón */
+.search-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+/* Input de búsqueda */
+#searchInput {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Efecto foco en el input */
+#searchInput:focus {
+    outline: 2px solid #666;
+}
+
+/* Botón buscar */
+#searchButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #e9ecc7;
+    color: #1f1e1e;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover del botón */
+#searchButton:hover {
+    background-color: #666;
+}
+
+.button-index {
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #ebe5cd;
+}
+
+/* Tarjetas container (lista) */
+.container-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Cada tarjeta */
+.antique-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* Animación al pasar el ratón */
+.antique-card:hover {
+    transform: scale(1.02);
+}
+
+/* Imagen dentro de la tarjeta */
+.antique-card img {
+    width: 100%;           /* Ocupa todo el ancho disponible */
+    max-width: 300px;      /* Pero no más de 300px */
+    height: auto;          /* Mantiene proporción */
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Descripción del objeto */
+.antique-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #eee;
+}
+
+/* Tarjeta abierta */
+.antique-card.opened {
+    max-width: 600px;
+    margin: 1rem auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Imagen en tarjeta abierta más grande */
+.antique-card.opened img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Texto más grande en tarjeta abierta */
+.antique-card.opened p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Diseño responsive para pantallas grandes */
+@media (min-width: 768px) {
+    .container-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .antique-card p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Responsive para buscador en móviles */
+@media (max-width: 480px) {
+    .search-container {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+}
+
+/* Pie de página */
+footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-top: 2px solid #444;
+    color: #bebdbd;
+    font-size: 20px;
+}

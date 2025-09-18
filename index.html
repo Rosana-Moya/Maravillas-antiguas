@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Maravillas antiguas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <h1>MARAVILLAS ANTIGUAS</h1>
     </header>
-    <div class="container-list">
 
+   <main>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar..." />
+        <button id="searchButton">Buscar</button>
     </div>
+
+    <!-- Botón "Volver al inicio" -->
+    <div class="back-container" style="text-align: center; margin-bottom: 1rem;">
+        <button class="button-index" id="backButton" style="display: none;">Volver al inicio</button>
+    </div>
+
+    <div class="container-list"></div>
+</main>
+
+    <footer>
+       <p>Rosana aprendiendo 2025</p>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
-<script src="main.js"></script>
 </html>

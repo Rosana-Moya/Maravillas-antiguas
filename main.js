@@ -137,3 +137,20 @@ backButton.addEventListener("click", () => {
 
 // Renderizar al cargar
 renderAntiques();
+
+// Mostrar/ocultar botón de scroll según posición
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+});
+
+// Evento clic en la flecha para subir suavemente
+scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+

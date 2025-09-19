@@ -5,6 +5,32 @@
     box-sizing: border-box;
 }
 
+/* Flecha flotante para subir al inicio */
+.scroll-top {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+
+}
+
+.scroll-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+}
+
+.scroll-top:hover {
+    transform: scale(1.2);
+}
+
+
 /* Estilos generales del body */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -82,7 +108,7 @@ main::before {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 8px;
-    background-color: #e9ecc7;
+    background-color: #f1e4a2;
     color: #1f1e1e;
     cursor: pointer;
     font-size: 1rem;
@@ -98,7 +124,7 @@ main::before {
     color: black;
     border-radius: 5px;
     padding: 5px;
-    background-color: #ebe5cd;
+    background-color: #dbb773;
 }
 
 /* Tarjetas container (lista) */
